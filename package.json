@@ -1,0 +1,42 @@
+{
+  "name": "studio-tsar-backend",
+  "version": "1.0.0",
+  "description": "Backend for a web app intended for the  management of tattoo shops, named Studio Tsar",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerxoLaxe/studio-tsar-backend.git"
+  },
+  "keywords": [
+    "node",
+    "backend",
+    "tattoo",
+    "management"
+  ],
+  "author": "Sergio Lage Loureiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SerxoLaxe/studio-tsar-backend/issues"
+  },
+  "homepage": "https://github.com/SerxoLaxe/studio-tsar-backend#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "faker": "^5.5.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.10",
+    "nodemon": "^2.0.19"
+  }
+}
