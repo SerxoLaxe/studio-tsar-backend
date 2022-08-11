@@ -1,6 +1,8 @@
 const faker = require('faker');
+const connection = require('./connectionMysql');
+
 function fillDB() {
-console.log('ok baby');
+    const tal = 0;
 }
 
-module.exports = { fillDB};
+module.exports = { fillDB };

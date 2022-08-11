@@ -50,27 +50,35 @@ app.use("/static", express.static(path.join(__dirname, UPLOAD_DIRECTORY)));
 // Middleware subida de archivos a servidor.
 app.use(fileUpload());
 
+///////////////////////////////////* ENDPOINTS *////////////////////////////////////////
+
+const users = require('./controllers/users');
+app.post('/users/create', users.create);
+app.delete('/users/remove', users.remove)
+app.put('/users/edit', users.edit);
+app.put('/users/validate', users.validate);
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* Middleware error */
 app.use((err, req, res, next) => {
-    res.status(err.httpStatus || 500).send({
-      status: "error",
-      message: err.message,
-    });
-    helpers.logError(err);
+  res.status(err.httpStatus || 500).send({
+    status: "error",
+    message: err.message,
   });
-  
-  /* Middleware página no encontrada */
-  app.use((req, res, next) => {
-    res.statusCode = 404;
-    res.send({
-      status: 404,
-      message: "página no encontrada",
-    });
+  helpers.logError(err);
+});
+
+/* Middleware página no encontrada */
+app.use((req, res, next) => {
+  res.statusCode = 404;
+  res.send({
+    status: 404,
+    message: "Page not founf",
   });
-  
-  /* Iniciar escucha del servidor. */
-  app.listen(PORT, HOST, () => {
-    console.log(chalk.yellow.bold(`Servidor escuchando en ${HOST}:${PORT}`));
-  });
+});
+
+/* Iniciar escucha del servidor. */
+app.listen(PORT, HOST, () => {
+  console.log(chalk.yellow.bold(`Servidor escuchando en ${HOST}:${PORT}`));
+});
