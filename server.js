@@ -58,6 +58,24 @@ app.delete('/users/remove', users.remove)
 app.put('/users/edit', users.edit);
 app.put('/users/validate', users.validate);
 
+const clients = require('./controllers/clients');
+app.post('/clients/create', clients.create);
+app.delete('/clients/remove', clients.remove);
+app.put('/clients/edit', clients.edit);
+app.put('/clients/validate', clients.validate);
+
+const proyects = require('./controllers/proyects');
+app.post('/proyects/create', proyects.create);
+app.delete('/proyects/remove', proyects.remove);
+app.put('/proyects/edit', proyects.edit);
+app.put('/proyects/validate', proyects.validate);
+
+const studios = require('./controllers/studios');
+app.post('/studios/create', studios.create);
+app.delete('/sudios/remove', studios.remove);
+app.put('/studios/edit', studios.edit);
+app.put('/studios/validate', studios.validate);
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* Middleware error */
@@ -74,7 +92,7 @@ app.use((req, res, next) => {
   res.statusCode = 404;
   res.send({
     status: 404,
-    message: "Page not founf",
+    message: "Page not found",
   });
 });
 

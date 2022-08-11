@@ -3,12 +3,11 @@ function create(req, res, next) {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'User created successfully.',
+            data: 'New user created successfully.',
         });
     } catch (error) {
         next(error);
     }
-
 }
 
 module.exports = create;
