@@ -52,13 +52,13 @@ app.use(fileUpload());
 
 ///////////////////////////////////* ENDPOINTS *////////////////////////////////////////
 
-const users = require('./controllers/users');
-app.post('/users/create', users.create);
-app.delete('/users/remove', users.remove)
-app.put('/users/edit', users.edit);
-app.put('/users/validate', users.validate);
+const artists = require('./controllers/users/artists');
+app.post('/artists/create', artists.create);
+app.delete('/artists/remove', artists.remove)
+app.put('/artists/edit', artists.edit);
+app.put('/artists/validate', artists.validate);
 
-const clients = require('./controllers/clients');
+const clients = require('./controllers/users/clients');
 app.post('/clients/create', clients.create);
 app.delete('/clients/remove', clients.remove);
 app.put('/clients/edit', clients.edit);
@@ -75,6 +75,20 @@ app.post('/studios/create', studios.create);
 app.delete('/sudios/remove', studios.remove);
 app.put('/studios/edit', studios.edit);
 app.put('/studios/validate', studios.validate);
+
+app.get('/help', (req, res, next) => {
+  res.statusCode = 200;
+  res.send({
+    status: 'Ok',
+    message: 'How to use this API',
+    data:{
+      userEndpoints:{
+        createUser: '/artists/create',
+        createClient: '/clients/create'
+      }
+    }
+  })
+})
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
