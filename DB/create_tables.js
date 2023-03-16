@@ -9,6 +9,6 @@ async function createTables(connection) {
             )
         }
     );
-    helpers.log(`Tablas creadas`);
+    helpers.log('Tables created');
 }
 module.exports={createTables};
