@@ -1,13 +1,12 @@
-function remove(){
+function add(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Artist account removed successfully.',
+            data: 'New appointement added.',
         });
     } catch (error) {
         next(error);
     }
 }
-
-module.exports = remove;
+module.exports = add;

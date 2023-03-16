@@ -52,7 +52,7 @@ app.use(fileUpload());
 
 ///////////////////////////////////* ENDPOINTS *////////////////////////////////////////
 
-const artists = require('./controllers/users/artists');
+/* const artists = require('./controllers/users/artists');
 app.post('/artists/create', artists.create);
 app.delete('/artists/remove', artists.remove)
 app.put('/artists/edit', artists.edit);
@@ -64,31 +64,27 @@ app.delete('/clients/remove', clients.remove);
 app.put('/clients/edit', clients.edit);
 app.put('/clients/validate', clients.validate);
 
-const proyects = require('./controllers/proyects');
-app.post('/proyects/create', proyects.create);
-app.delete('/proyects/remove', proyects.remove);
-app.put('/proyects/edit', proyects.edit);
-app.put('/proyects/validate', proyects.validate);
-
 const studios = require('./controllers/studios');
 app.post('/studios/create', studios.create);
 app.delete('/sudios/remove', studios.remove);
-app.put('/studios/edit', studios.edit);
-app.put('/studios/validate', studios.validate);
+app.put('/studios/edit', studios.edit); */
+const router = require("./routing");
 
-app.get('/help', (req, res, next) => {
+app.use(router);
+
+app.get("/help", (req, res, next) => {
   res.statusCode = 200;
   res.send({
-    status: 'Ok',
-    message: 'How to use this API',
-    data:{
-      userEndpoints:{
-        createUser: '/artists/create',
-        createClient: '/clients/create'
-      }
-    }
-  })
-})
+    status: "Ok",
+    message: "How to use this API",
+    data: {
+      userEndpoints: {
+        createUser: "/artists/create",
+        createClient: "/clients/create",
+      },
+    },
+  });
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

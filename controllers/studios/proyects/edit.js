@@ -1,13 +1,13 @@
-function remove(){
+function edit() {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Artist account removed successfully.',
+            data: 'Proyect edited successfully.',
         });
     } catch (error) {
         next(error);
     }
 }
 
-module.exports = remove;
+module.exports = edit;

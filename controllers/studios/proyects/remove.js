@@ -3,7 +3,7 @@ function remove(){
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Artist account removed successfully.',
+            data: 'Proyect removed successfully.',
         });
     } catch (error) {
         next(error);

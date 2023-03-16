@@ -1,13 +1,12 @@
-function remove(){
+function search(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Artist account removed successfully.',
+            data: 'Studio found',
         });
     } catch (error) {
         next(error);
     }
 }
-
-module.exports = remove;
+module.exports = search;
