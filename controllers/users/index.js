@@ -1,4 +1,7 @@
-export class User{
+const artists = require('./artists')
+const clients = require('./clients')
+
+class User{
     constructor(
         name,
         surname,
@@ -21,3 +24,9 @@ export class User{
             this.instagramAccountName=instagramAccountName;
         }
     }
+
+module.exports = {
+    clients,
+    artists,
+    User
+}
