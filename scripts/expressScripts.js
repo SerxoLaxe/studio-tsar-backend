@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { options } = require("../routes");
 
 function getExpressRoutes(expressApp) {
   const parsed = require("express-route-parser").parseExpressApp;

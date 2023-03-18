@@ -1,15 +1,15 @@
 const express = require("express");
-const bills = require("../../../controllers/studios/projects/bills");
+const bills = require("./controllers");
 
-const id_router = express
+const idRouter = express
   .Router({ mergeParams: true })
   .put("/edit", bills.edit)
   .delete("/delete", bills.remove);
 
-const bills_router = express
+const billsRouter = express
   .Router({ mergeParams: true })
   .post("/create", bills.add)
   .get('/search', bills.search)
-  .use('/:billId', id_router)
+  .use('/:billId', idRouter)
 
-  module.exports = bills_router
+  module.exports = billsRouter

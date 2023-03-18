@@ -1,14 +1,14 @@
 const express = require("express");
-const studios = require("../../controllers/studios");
+const studios = require("./controllers");
 
 const id_router = express
   .Router({ mergeParams: true })
   .put("/edit", studios.edit)
   .delete("/remove", studios.remove)
-  .use("/projects", require("./projects"))
-  .use("/clients", require("./clients"))
-  .use("/artists", require("./artists"))
-  .use("/events", require("./events"));
+  .use("/projects", require("./components/projects/routes"))
+  .use("/clients", require("./components/clients/routes"))
+  .use("/artists", require("./components/artists/routes"))
+  .use("/events", require("./components/events/routes"));
 
 const studios_router = express
   .Router({ mergeParams: true })

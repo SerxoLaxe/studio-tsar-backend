@@ -51,7 +51,7 @@ app.use("/static", express.static(path.join(__dirname, UPLOAD_DIRECTORY)));
 app.use(fileUpload());
 
 ///////////////////////////////////* ROUTES *////////////////////////////////////////
-const router = require("./routes");
+const router = require("./api/routes");
 app.use(router);
 
 app.get("/help", (req, res, next) => {

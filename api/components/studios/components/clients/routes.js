@@ -1,5 +1,5 @@
 const Router = require("express").Router;
-const clients = require("../../controllers/studios/clients");
+const clients = require("./controllers");
 
 const idRouter = Router({ mergeParams: true })
   .put("/edit", clients.edit)

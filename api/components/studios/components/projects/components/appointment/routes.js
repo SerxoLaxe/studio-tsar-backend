@@ -1,15 +1,15 @@
 const express = require("express");
-const appointments = require("../../../controllers/studios/projects/appointment");
+const appointments = require("./controllers");
 
-const id_router = express
+const idRouter = express
   .Router({ mergeParams: true })
   .put("/edit", appointments.edit)
   .delete("/delete", appointments.remove);
 
-const appointments_router = express
+const appointmentsRouter = express
   .Router({ mergeParams: true })
   .post("/add", appointments.add)
   .get('/search', appointments.search)
-  .use('/:appointmentId', id_router)
+  .use('/:appointmentId', idRouter)
 
-  module.exports = appointments_router
+  module.exports = appointmentsRouter

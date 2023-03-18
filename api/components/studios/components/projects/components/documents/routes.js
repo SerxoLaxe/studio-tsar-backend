@@ -1,15 +1,15 @@
 const express = require("express");
-const documents = require("../../../controllers/studios/projects/documents");
+const documents = require("./controllers");
 
-const id_router = express
+const idRouter = express
   .Router({ mergeParams: true })
   .put("/edit", documents.edit)
   .delete("/delete", documents.remove);
 
-const documents_router = express
+const documentsRouter = express
   .Router({ mergeParams: true })
   .post("/create", documents.add)
   .get('/search', documents.search)
-  .use('/:documentId', id_router)
+  .use('/:documentId', idRouter)
 
-  module.exports = documents_router
+  module.exports = documentsRouter
