@@ -1,75 +1,57 @@
-// Módulo que carga las variables del archivo .env en las variables de entorno
+// Import dotenv module. Dedicated to load environment variables contained in './.env' file
 require("dotenv").config();
 
-// Destructuring de las variables de entorno necesarias;
+// Destructuring environment variables;
 const { HOST, PORT, UPLOAD_DIRECTORY } = process.env;
 
-// Módulo para el formato de direcciones de archivos y directorios.
+// format and manage file paths with module Path.
 const path = require("path");
 
-// Middleware log de eventos de express.
+// Middleware for express event logging.
 const morgan = require("morgan");
 
-// Middleware para la subida de archivos al servidor.
+// Middleware for file uploading.
 const fileUpload = require("express-fileupload");
 
-// Módulo para editar formato y estilo de logs.
+// format, color and style for log messages with Chalk module.
 const chalk = require("chalk");
 
-// Helpers incluye generador de codigos de validacion, formateo de fechas, customización de errores...
+// Helper functions
 const helpers = require("./helpers");
 
-// Módulo para la creación de servidor http.
+// import express.
 const express = require("express");
 
-// Definición de aplicación Express.
+// Define Express app.
 const app = express();
 
-// Reset y configuración de la base de datos con datos creados por módulo Faker.
+// Configure the database at application start.
 require("./DB/initDB").config();
 
-// Se incluye este modulo, para que no exista conflictos en la base de datos cuando se realicen  peticiones en el servidor local
+// Import cors module
 const cors = require("cors");
 
 /////////////////////////////////////*MIDDLEWARES*///////////////////////////////////////
 
-// GLOBALES
+// GLOBAL
 
-// MIddleware log de eventos de express.
+// Middleware for logging events.
 app.use(morgan("dev"));
 
-//Evita conflictos en nuestra base de datos local.
+//Cors middleware.
 app.use(cors());
 
-// Middleware parsing responses a json.
+// Middleware to parse json responses.
 app.use(express.json());
 
-// Middleware recursos estáticos.
+// Middleware for static resources.
 app.use("/static", express.static(path.join(__dirname, UPLOAD_DIRECTORY)));
 
-// Middleware subida de archivos a servidor.
+// Middleware for file uploading.
 app.use(fileUpload());
 
 ///////////////////////////////////* ENDPOINTS *////////////////////////////////////////
-
-/* const artists = require('./controllers/users/artists');
-app.post('/artists/create', artists.create);
-app.delete('/artists/remove', artists.remove)
-app.put('/artists/edit', artists.edit);
-app.put('/artists/validate', artists.validate);
-
-const clients = require('./controllers/users/clients');
-app.post('/clients/create', clients.create);
-app.delete('/clients/remove', clients.remove);
-app.put('/clients/edit', clients.edit);
-app.put('/clients/validate', clients.validate);
-
-const studios = require('./controllers/studios');
-app.post('/studios/create', studios.create);
-app.delete('/sudios/remove', studios.remove);
-app.put('/studios/edit', studios.edit); */
 const router = require("./routing");
-
 app.use(router);
 
 app.get("/help", (req, res, next) => {
@@ -97,7 +79,7 @@ app.use((err, req, res, next) => {
   helpers.logError(err);
 });
 
-/* Middleware página no encontrada */
+/* Middleware page not found*/
 app.use((req, res, next) => {
   res.statusCode = 404;
   res.send({
@@ -106,7 +88,7 @@ app.use((req, res, next) => {
   });
 });
 
-/* Iniciar escucha del servidor. */
+/* start server. */
 app.listen(PORT, HOST, () => {
-  console.log(chalk.yellow.bold(`Servidor escuchando en ${HOST}:${PORT}`));
+  console.log(chalk.yellow.bold(`Server listening on ${HOST}:${PORT}`));
 });

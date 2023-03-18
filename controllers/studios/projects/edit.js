@@ -1,13 +1,13 @@
-function remove(){
+function edit(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Client removed from studio successfully.',
+            data: 'Proyect edited successfully.',
         });
     } catch (error) {
         next(error);
     }
 }
 
-module.exports = remove;
+module.exports = edit;

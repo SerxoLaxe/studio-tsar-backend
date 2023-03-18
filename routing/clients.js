@@ -1,11 +1,16 @@
-const express = require('express')
-const clients_router = express.Router({ mergeParams: true });
+const express = require("express");
 const clients = require("../controllers/users/clients");
-clients_router
-  .post("/create", clients.create)
+
+const id_router = express
+  .Router({ mergeParams: true })
   .put("/edit", clients.edit)
   .put("/validate", clients.validate)
   .put("/preferences", clients.edit_preferences)
   .delete("/remove", clients.remove);
 
-  module.exports = clients_router
+const clients_router = express
+  .Router({ mergeParams: true })
+  .post("/create", clients.create)
+  .use("/:clientId", id_router);
+
+module.exports = clients_router;

@@ -1,4 +1,4 @@
-function validate(){
+function validate(req, res, next){
     try {
         res.statusCode = 200;
         res.send({

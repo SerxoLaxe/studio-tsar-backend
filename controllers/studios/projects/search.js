@@ -1,13 +1,13 @@
-function remove(){
+function search(){
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Client removed from studio successfully.',
+            data: 'Proyect searched successfully.',
         });
     } catch (error) {
         next(error);
     }
 }
 
-module.exports = remove;
+module.exports = search;

@@ -1,10 +1,13 @@
 const express = require("express");
 
-const main_router = express.Router();
+const api_router = express
+  .Router({ mergeParams: true })
+  .use("/clients", require("./clients"))
+  .use("/artists", require("./artists"))
+  .use("/studios", require("./studios"));
 
-main_router
-  .use("/client/:id?", require("./clients"))
-  .use("/artist/:id?", require("./artists"))
-  .use("/studio/:id?", require("./studios"));
+const main_router = express
+  .Router({ mergeParams: true })
+  .use("/api", api_router);
 
-  module.exports = main_router
+module.exports = main_router;
