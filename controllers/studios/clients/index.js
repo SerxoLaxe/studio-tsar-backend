@@ -1,10 +1,10 @@
-const create = require("./create");
+const add = require("./add");
 const edit = require("./edit");
 const remove = require("./remove");
 const search = require("./search");
 
 module.exports = {
-  create,
+  add,
   edit,
   remove,
   search,

@@ -1,4 +1,4 @@
-function edit() {
+function edit(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({

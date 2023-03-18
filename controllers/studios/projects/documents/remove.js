@@ -3,7 +3,7 @@ function remove(req, res, next) {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Bill removed.',
+            data: 'Document removed.',
         });
     } catch (error) {
         next(error);

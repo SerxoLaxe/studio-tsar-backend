@@ -5,12 +5,15 @@ const id_router = express
   .Router({ mergeParams: true })
   .put("/edit", studios.edit)
   .delete("/remove", studios.remove)
-  .use("/projects", require("./projects"));
+  .use("/projects", require("./projects"))
+  .use("/clients", require("./clients"))
+  .use("/artists", require("./artists"))
+  .use("/events", require("./events"));
 
 const studios_router = express
   .Router({ mergeParams: true })
   .post("/create", studios.create)
   .get("/search", studios.search)
-  .use("/:studioId", id_router)
+  .use("/:studioId", id_router);
 
 module.exports = studios_router;

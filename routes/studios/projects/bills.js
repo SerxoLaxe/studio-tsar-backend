@@ -9,6 +9,7 @@ const id_router = express
 const bills_router = express
   .Router({ mergeParams: true })
   .post("/create", bills.add)
-  .use('/:appointmentId', id_router)
+  .get('/search', bills.search)
+  .use('/:billId', id_router)
 
   module.exports = bills_router

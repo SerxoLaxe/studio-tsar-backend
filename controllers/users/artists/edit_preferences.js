@@ -1,4 +1,4 @@
-function edit_preferences(){
+function edit_preferences(req, res, next){
 }
 
 module.exports = edit_preferences;

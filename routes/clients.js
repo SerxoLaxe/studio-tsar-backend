@@ -1,16 +1,16 @@
 const express = require("express");
 const clients = require("../controllers/users/clients");
 
-const id_router = express
+const idRouter = express
   .Router({ mergeParams: true })
   .put("/edit", clients.edit)
   .put("/validate", clients.validate)
   .put("/preferences", clients.edit_preferences)
   .delete("/remove", clients.remove);
 
-const clients_router = express
+const clientsRouter = express
   .Router({ mergeParams: true })
   .post("/create", clients.create)
-  .use("/:clientId", id_router);
+  .use("/:clientId", idRouter);
 
-module.exports = clients_router;
+module.exports = clientsRouter;

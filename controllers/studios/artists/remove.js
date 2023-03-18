@@ -1,4 +1,4 @@
-function remove(){
+function remove(req, res, next){
     try {
         res.statusCode = 200;
         res.send({

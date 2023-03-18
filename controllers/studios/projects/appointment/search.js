@@ -1,13 +1,12 @@
-function create(req, res, next) {
+function search(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'New proyect created successfully.',
+            data: 'Appointement search.',
         });
     } catch (error) {
         next(error);
     }
 }
-
-module.exports = create;
+module.exports = search;

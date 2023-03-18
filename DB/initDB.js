@@ -5,9 +5,8 @@ const path = require("path"); //Módulo para creación de rutas de directorios y
 const helpers = require("../helpers"); //Módulo que incluye los helpers globales.
 const tables = require("./tablesDD").tables; // Módulo con los objetos que definen las tablas de la base de datos.
 const connectionMysql = require("./connectionMysql"); //Modulo para obtener conexión a MYSQL
-const fillDB = require('./fill_DB_with_fake_data').fillDB;
-const createTables = require('./create_tables').createTables;
-const { fakerConfig } = require("../config");
+const fillDB = require("./fill_DB_with_fake_data").fillDB;
+const createTables = require("./create_tables").createTables;
 const { indexOf } = require("lodash");
 
 /** Configura completamente la base de datos */
@@ -17,21 +16,11 @@ async function config() {
   try {
     connection = await connectionMysql();
     if (RESET_DB === "true") {
-     //await createTables(connection);
-      /*  //Si la variable de entorno RESET_DB es true reseteamos la base de datos.
-       await eliminarTablas(conexion);
-       await crearTablas(conexion);
-       await crearAdministrador(conexion);
-       await llenarTablaUsuarios(fakerConfig.usuarios.cantidad, conexion);
-       await llenarTablaExperiencias(
-         fakerConfig.experiencias.cantidad,
-         conexion
-       ); */
+      /* Delete all data and generate it again with faker */
     } else if (RESET_DB === "false") {
-      //De lo contrario sólo creamos las tablas si no existen.
-      /* await crearTablas(conexion); */
+     /* Chech if the present tables are well configured, create them if necessary */
     } else {
-      throw new Error("Valor de variable de entorno RESET_DB no válido");
+      throw new Error(`RESET_DB value ${RESET_DB} not valid. Must be true or false`);
     }
   } catch (error) {
     helpers.logError(error);
@@ -41,6 +30,6 @@ async function config() {
     }
   }
 }
-fillDB()
+fillDB();
 
 module.exports = { config };

@@ -1,13 +1,13 @@
-function edit(req, res ,next) {
+function add(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Client status edited on studio successfully.',
+            data: 'Client added to studio successfully.',
         });
     } catch (error) {
         next(error);
     }
 }
 
-module.exports = edit;
+module.exports = add;

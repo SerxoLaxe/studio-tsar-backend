@@ -1,13 +1,13 @@
-function create(req, res, next) {
+function add(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Client created on studio successfully.',
+            data: 'Artist added to studio successfully.',
         });
     } catch (error) {
         next(error);
     }
 }
 
-module.exports = create;
+module.exports = add;

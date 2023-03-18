@@ -38,7 +38,11 @@
     "npm": "^9.6.2"
   },
   "devDependencies": {
+    "express-route-parser": "^1.0.5",
     "jsdoc": "^4.0.2",
     "nodemon": "^2.0.19"
+  },
+  "nodemonConfig":{
+    "ignore" : ["logs"]
   }
 }

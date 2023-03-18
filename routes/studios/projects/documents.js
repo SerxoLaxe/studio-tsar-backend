@@ -9,6 +9,7 @@ const id_router = express
 const documents_router = express
   .Router({ mergeParams: true })
   .post("/create", documents.add)
+  .get('/search', documents.search)
   .use('/:documentId', id_router)
 
   module.exports = documents_router

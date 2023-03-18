@@ -50,8 +50,8 @@ app.use("/static", express.static(path.join(__dirname, UPLOAD_DIRECTORY)));
 // Middleware for file uploading.
 app.use(fileUpload());
 
-///////////////////////////////////* ENDPOINTS *////////////////////////////////////////
-const router = require("./routing");
+///////////////////////////////////* ROUTES *////////////////////////////////////////
+const router = require("./routes");
 app.use(router);
 
 app.get("/help", (req, res, next) => {
@@ -87,6 +87,10 @@ app.use((req, res, next) => {
     message: "Page not found",
   });
 });
+/* DEVELOPMENT SCRIPTS */
+const scripts = require('./scripts/expressScripts')
+
+console.log(scripts.saveExpressRoutesToFile(app, './logs/express_routes_dump.json'));
 
 /* start server. */
 app.listen(PORT, HOST, () => {
