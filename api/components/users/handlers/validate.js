@@ -3,7 +3,7 @@ function validate(req, res, next){
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'New artist account validated successfully.',
+            data: 'User account validated successfully.',
         });
     } catch (error) {
         next(error);

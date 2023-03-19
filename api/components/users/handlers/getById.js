@@ -3,7 +3,7 @@ function getById(req, res, next) {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'artist account selected successfully.',
+            data: 'User account selected successfully.',
         });
     } catch (error) {
         next(error);

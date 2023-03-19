@@ -3,7 +3,7 @@ function edit(req, res, next){
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'Artist account edited successfully.',
+            data: 'User account edited successfully.',
         });
     } catch (error) {
         next(error);
