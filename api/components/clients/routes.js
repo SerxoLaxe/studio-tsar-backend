@@ -3,14 +3,16 @@ const clients = require("./controllers");
 
 const idRouter = express
   .Router({ mergeParams: true })
-  .put("/edit", clients.edit)
+  .get('/', clients.getById)
+  .put("/", clients.edit)
   .put("/validate", clients.validate)
   .put("/preferences", clients.edit_preferences)
-  .delete("/remove", clients.remove);
+  .delete("/", clients.remove);
 
 const clientsRouter = express
   .Router({ mergeParams: true })
-  .post("/create", clients.create)
+  .post("/", clients.create)
+  .get('/search', clients.search)
   .use("/:clientId", idRouter);
 
 module.exports = clientsRouter;

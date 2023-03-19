@@ -2,13 +2,15 @@ const Router = require("express").Router;
 const artists = require("./controllers");
 
 const idRouter = Router({ mergeParams: true })
-  .put("/edit", artists.edit)
+  .put("/", artists.edit)
   .put("/validate", artists.validate)
   .put("/preferences")
-  .delete("/remove", artists.remove);
+  .delete("/", artists.remove)
+  .get("/", artists.getById);
 
 const artistsRouter = Router({ mergeParams: true })
-  .post("/create", artists.create)
+  .post("/", artists.create)
+  .get("/search", artists.search)
   .use("/:artistId", idRouter);
 
 module.exports = artistsRouter;
