@@ -1,5 +1,5 @@
 const express = require("express");
-const bills = require("./controllers");
+const bills = require("./handlers");
 
 const idRouter = express
   .Router({ mergeParams: true })

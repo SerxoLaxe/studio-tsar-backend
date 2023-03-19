@@ -1,5 +1,5 @@
 const Router = require("express").Router;
-const events = require("./controllers");
+const events = require("./handlers");
 
 const idRouter = Router({ mergeParams: true })
   .put("/", events.edit)

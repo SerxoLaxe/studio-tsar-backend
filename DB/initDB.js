@@ -5,9 +5,6 @@ const path = require("path"); //Módulo para creación de rutas de directorios y
 const helpers = require("../helpers"); //Módulo que incluye los helpers globales.
 const tables = require("./tablesDD").tables; // Módulo con los objetos que definen las tablas de la base de datos.
 const connectionMysql = require("./connectionMysql"); //Modulo para obtener conexión a MYSQL
-const fillDB = require("./fill_DB_with_fake_data").fillDB;
-const createTables = require("./create_tables").createTables;
-const { indexOf } = require("lodash");
 
 /** Configura completamente la base de datos */
 async function config() {
@@ -30,6 +27,5 @@ async function config() {
     }
   }
 }
-fillDB();
 
 module.exports = { config };

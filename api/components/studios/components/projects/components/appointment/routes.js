@@ -1,5 +1,5 @@
 const express = require("express");
-const appointments = require("./controllers");
+const appointments = require("./handlers");
 
 const idRouter = express
   .Router({ mergeParams: true })

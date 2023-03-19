@@ -1,5 +1,5 @@
 const express = require("express");
-const studios = require("./controllers");
+const studios = require("./handlers");
 
 const id_router = express
   .Router({ mergeParams: true })
