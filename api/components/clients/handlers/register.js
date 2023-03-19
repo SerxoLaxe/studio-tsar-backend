@@ -1,12 +1,12 @@
-function create(req, res, next) {
+function register(req, res, next) {
     try {
         res.statusCode = 200;
         res.send({
             status: "Ok",
-            data: 'New client created successfully.',
+            data: 'New client registered successfully.',
         });
     } catch (error) {
         next(error);
     }
 }
-module.exports = create;
+module.exports = register;

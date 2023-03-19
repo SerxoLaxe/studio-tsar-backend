@@ -11,7 +11,7 @@ const idRouter = express
 
 const clientsRouter = express
   .Router({ mergeParams: true })
-  .post("/", clients.create)
+  .post("/", clients.register)
   .get('/search', clients.search)
   .use("/:clientId", idRouter);
 

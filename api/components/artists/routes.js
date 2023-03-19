@@ -9,7 +9,7 @@ const idRouter = Router({ mergeParams: true })
   .get("/", artists.getById);
 
 const artistsRouter = Router({ mergeParams: true })
-  .post("/", artists.create)
+  .post("/", artists.register)
   .get("/search", artists.search)
   .use("/:artistId", idRouter);
 

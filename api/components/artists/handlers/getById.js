@@ -10,4 +10,13 @@ function getById(req, res, next) {
     }
 }
 
+async function getArtistByIdquery(id) {
+    try {
+        
+    } catch (error) {
+        
+    }
+    
+}
+
 module.exports = getById

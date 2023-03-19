@@ -1,4 +1,4 @@
-const create = require('./create');
+const register = require('./register');
 const edit = require('./edit');
 const remove = require('./remove');
 const validate = require('./validate');
@@ -7,7 +7,7 @@ const getById = require('./getById')
 const search = require('./search')
 
 module.exports = {
-    create,
+    register,
     edit,
     remove,
     validate,
