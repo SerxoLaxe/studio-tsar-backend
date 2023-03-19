@@ -3,12 +3,13 @@ const documents = require("./controllers");
 
 const idRouter = express
   .Router({ mergeParams: true })
-  .put("/edit", documents.edit)
-  .delete("/delete", documents.remove);
+  .put("/", documents.edit)
+  .delete("/", documents.remove)
+  .get('/', documents.getById);
 
 const documentsRouter = express
   .Router({ mergeParams: true })
-  .post("/create", documents.add)
+  .post("/", documents.add)
   .get('/search', documents.search)
   .use('/:documentId', idRouter)
 

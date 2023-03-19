@@ -2,11 +2,11 @@ const Router = require("express").Router;
 const clients = require("./controllers");
 
 const idRouter = Router({ mergeParams: true })
-  .put("/edit", clients.edit)
-  .delete("/remove", clients.remove);
+  .put("/", clients.edit)
+  .delete("/", clients.remove);
 
   const clientsRouter = Router({mergeParams:true})
-  .post('/add', clients.add)
+  .post('/', clients.add)
   .get('/search', clients.search)
   .use('/:clientId', idRouter)
   

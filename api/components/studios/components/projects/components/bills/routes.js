@@ -3,12 +3,13 @@ const bills = require("./controllers");
 
 const idRouter = express
   .Router({ mergeParams: true })
-  .put("/edit", bills.edit)
-  .delete("/delete", bills.remove);
+  .put("/", bills.edit)
+  .delete("/", bills.remove)
+  .get('/', bills.getById);
 
 const billsRouter = express
   .Router({ mergeParams: true })
-  .post("/create", bills.add)
+  .post("/", bills.add)
   .get('/search', bills.search)
   .use('/:billId', idRouter)
 

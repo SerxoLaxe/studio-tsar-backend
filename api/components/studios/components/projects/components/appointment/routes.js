@@ -3,12 +3,12 @@ const appointments = require("./controllers");
 
 const idRouter = express
   .Router({ mergeParams: true })
-  .put("/edit", appointments.edit)
-  .delete("/delete", appointments.remove);
+  .put("/", appointments.edit)
+  .delete("/", appointments.remove);
 
 const appointmentsRouter = express
   .Router({ mergeParams: true })
-  .post("/add", appointments.add)
+  .post("/", appointments.add)
   .get('/search', appointments.search)
   .use('/:appointmentId', idRouter)
 
