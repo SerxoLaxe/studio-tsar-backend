@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "environmentName": "studio-tsar-env",
-    "dateExported": "2023-03-18T22:34:45.082Z",
+    "dateExported": "2023-03-23T00:51:59.472Z",
     "version": "1.0",
     "variables": [
         {
@@ -9,7 +9,7 @@
             "value": "1"
         },
         {
-            "name": "artistId",
+            "name": "userId",
             "value": "1"
         },
         {

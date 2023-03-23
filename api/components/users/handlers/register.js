@@ -1,6 +1,6 @@
 function create(req, res, next) {
   try {
-    registerUser()
+    //registerUser()
     res.statusCode = 200;
     res.send({
       status: "Ok",

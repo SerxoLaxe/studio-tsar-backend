@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "b41965ea-8bef-4776-8ae8-f8f60b275887",
+    "name": "studio-tsar-env",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-03-22T23:27:00.744Z",
+    "modified": "2023-03-22T23:27:00.744Z",
+    "data": [
+      {
+        "name": "clientId",
+        "value": "1"
+      },
+      {
+        "name": "userId",
+        "value": "1"
+      },
+      {
+        "name": "studioId",
+        "value": "1"
+      },
+      {
+        "name": "projectId",
+        "value": "1"
+      },
+      {
+        "name": "studioClientId",
+        "value": "1"
+      },
+      {
+        "name": "studioArtistId",
+        "value": "1"
+      },
+      {
+        "name": "eventId",
+        "value": "1"
+      },
+      {
+        "name": "appointmentId",
+        "value": "1"
+      },
+      {
+        "name": "billId",
+        "value": "1"
+      },
+      {
+        "name": "documentId",
+        "value": "1"
+      }
+    ]
+  }
+]

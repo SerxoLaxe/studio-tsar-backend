@@ -1,0 +1,99 @@
+[
+  {
+    "_id": "dfd276ea-c165-41e2-a792-242da9456465",
+    "colName": "studio-tsar",
+    "created": "2023-03-22T23:26:28.056Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "2b5d2db0-afe8-417c-9498-9150103a2007",
+        "name": "studios",
+        "containerId": "",
+        "created": "2023-03-22T23:26:28.058Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "60101312-a44e-4ad4-86ed-6884cf9d9414",
+        "name": "projects",
+        "containerId": "2b5d2db0-afe8-417c-9498-9150103a2007",
+        "created": "2023-03-22T23:26:28.059Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "0eb4a28b-b20b-4ad9-9701-5b69971019e7",
+        "name": "appointments",
+        "containerId": "60101312-a44e-4ad4-86ed-6884cf9d9414",
+        "created": "2023-03-22T23:26:28.060Z",
+        "sortNum": 30000
+      },
+      {
+        "_id": "cfed8cc3-840e-4102-a686-9e5ce6c349ee",
+        "name": "billing",
+        "containerId": "60101312-a44e-4ad4-86ed-6884cf9d9414",
+        "created": "2023-03-22T23:26:28.061Z",
+        "sortNum": 40000
+      },
+      {
+        "_id": "e83bd150-f3a8-4cb8-a1fe-3674ff796ab0",
+        "name": "documents",
+        "containerId": "60101312-a44e-4ad4-86ed-6884cf9d9414",
+        "created": "2023-03-22T23:26:28.062Z",
+        "sortNum": 50000
+      },
+      {
+        "_id": "c5458a37-964c-44a6-8999-4205a6b42279",
+        "name": "events",
+        "containerId": "2b5d2db0-afe8-417c-9498-9150103a2007",
+        "created": "2023-03-22T23:26:28.063Z",
+        "sortNum": 60000
+      },
+      {
+        "_id": "6ced075a-b244-4f9a-8b3c-59662c749fbc",
+        "name": "users",
+        "containerId": "",
+        "created": "2023-03-22T23:26:28.064Z",
+        "sortNum": 80000
+      },
+      {
+        "_id": "40ab2192-2e94-492a-a336-bc005cda9249",
+        "name": "clients",
+        "containerId": "",
+        "created": "2023-03-22T23:26:28.065Z",
+        "sortNum": 90000
+      },
+      {
+        "_id": "030f2cc1-2d17-4162-808c-77e839d963f7",
+        "name": "clients",
+        "containerId": "2b5d2db0-afe8-417c-9498-9150103a2007",
+        "created": "2023-03-22T23:26:28.066Z",
+        "sortNum": 100000
+      },
+      {
+        "_id": "aa9676d2-b7c8-4c67-bfb7-d693a3d9b5ae",
+        "name": "artists",
+        "containerId": "2b5d2db0-afe8-417c-9498-9150103a2007",
+        "created": "2023-03-22T23:26:28.067Z",
+        "sortNum": 110000
+      }
+    ],
+    "settings": {
+      "headers": [],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ],
+      "options": {
+        "baseUrl": "http://localhost:1234/api"
+      },
+      "runOptions": {
+        "delay": 100,
+        "iterations": 1,
+        "dataFilePath": ""
+      }
+    }
+  }
+]
