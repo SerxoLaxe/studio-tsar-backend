@@ -26,14 +26,15 @@ const express = require("express");
 const app = express();
 
 // Configure the database at application start.
-require("./DB/initDB").config();
+//require("./DB/initDB").config();
+const db = require('./models/index.js')
+db.sequelize.drop()
+db.sequelize.sync({force: true})
 
 // Import cors module
 const cors = require("cors");
 
 /////////////////////////////////////*MIDDLEWARES*///////////////////////////////////////
-
-// GLOBAL
 
 // Middleware for logging events.
 app.use(morgan("dev"));
@@ -90,7 +91,7 @@ app.use((req, res, next) => {
 /* DEVELOPMENT SCRIPTS */
 const scripts = require('./scripts/expressScripts')
 
-console.log(scripts.saveExpressRoutesToFile(app, './logs/express_routes_dump.json'));
+scripts.saveExpressRoutesToFile(app, './logs/express_routes_dump.json');
 
 /* start server. */
 app.listen(PORT, HOST, () => {
