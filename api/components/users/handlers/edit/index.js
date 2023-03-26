@@ -1,13 +1,12 @@
-const registerUser = require("./service");
+const service = require("./service");
 const validation = require("./validation");
 
 async function handler(req, res, next) {
   try {
-    await registerUser(req.body.email);
     res.statusCode = 200;
     res.send({
       status: "Ok",
-      data: "New user account registered successfully.",
+      data: "User account edited successfully.",
     });
   } catch (error) {
     next(error);
