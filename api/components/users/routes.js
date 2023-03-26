@@ -1,16 +1,17 @@
 const Router = require("express").Router;
-const users = require("./handlers");
+const { validate } = require("express-validation");
+const handlers = require("./handlers");
 
 const idRouter = Router({ mergeParams: true })
-  .put("/", users.edit)
-  .put("/validate", users.validate)
+  .put("/", handlers.edit)
+  .put("/validate", handlers.validate)
   .put("/preferences")
-  .delete("/", users.remove)
-  .get("/", users.getById);
+  .delete("/", handlers.remove)
+  .get("/", handlers.getById);
 
 const usersRouter = Router({ mergeParams: true })
-  .post("/", users.register)
-  .get("/search", users.search)
+  .post("/", validate(handlers.register.validation, {}, {}) ,handlers.register.controller)
+  .get("/search", handlers.search)
   .use("/:userId", idRouter);
 
 module.exports = usersRouter;

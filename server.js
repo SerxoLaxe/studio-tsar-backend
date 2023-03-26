@@ -13,6 +13,9 @@ const morgan = require("morgan");
 // Middleware for file uploading.
 const fileUpload = require("express-fileupload");
 
+//Middleware for request body validation
+const ValidationError = require("express-validation").ValidationError;
+
 // format, color and style for log messages with Chalk module.
 const chalk = require("chalk");
 
@@ -26,9 +29,9 @@ const express = require("express");
 const app = express();
 
 // Configure the database at application start.
-const db = require('./models/index.js')
-db.sequelize.drop()
-db.sequelize.sync({force: true})
+const db = require("./models/index.js");
+db.sequelize.drop();
+db.sequelize.sync({ force: true });
 
 // Import cors module
 const cors = require("cors");
@@ -72,11 +75,14 @@ app.get("/help", (req, res, next) => {
 
 /* Middleware error */
 app.use((err, req, res, next) => {
-  res.status(err.httpStatus || 500).send({
+  helpers.logError(err);
+  if (err instanceof ValidationError) {
+    return res.status(err.statusCode).json(err);
+  }
+  return res.status(err.httpStatus || 500).send({
     status: "error",
     message: err.message,
   });
-  helpers.logError(err);
 });
 
 /* Middleware page not found*/
@@ -88,9 +94,9 @@ app.use((req, res, next) => {
   });
 });
 /* DEVELOPMENT SCRIPTS */
-const scripts = require('./scripts/expressScripts')
+const scripts = require("./scripts/expressScripts");
 
-scripts.saveExpressRoutesToFile(app, './logs/express_routes_dump.json');
+scripts.saveExpressRoutesToFile(app, "./logs/express_routes_dump.json");
 
 /* start server. */
 app.listen(PORT, HOST, () => {

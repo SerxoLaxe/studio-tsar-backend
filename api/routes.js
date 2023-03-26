@@ -5,7 +5,6 @@ const api_router = Router({ mergeParams: true })
   .use("/users", require("./components/users/routes"))
   .use("/studios", require("./components/studios/routes"));
 
-const main_router = Router({ mergeParams: true })
-  .use("/api", api_router);
+const main_router = Router({ mergeParams: true }).use("/api", api_router);
 
 module.exports = main_router;

@@ -1,15 +1,17 @@
-const registerUser = require('./service')
-function create(req, res, next) {
+const registerUser = require("./service");
+const validation = require("./validation");
+
+async function controller(req, res, next) {
   try {
-    registerUser(req.body.email);
+    await registerUser(req.body.email);
     res.statusCode = 200;
     res.send({
       status: "Ok",
-      data: "New user account created successfully.",
+      data: "New user account registered successfully.",
     });
   } catch (error) {
     next(error);
   }
 }
 
-module.exports = create;
+module.exports = { controller, validation };
