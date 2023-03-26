@@ -26,7 +26,6 @@ const express = require("express");
 const app = express();
 
 // Configure the database at application start.
-//require("./DB/initDB").config();
 const db = require('./models/index.js')
 db.sequelize.drop()
 db.sequelize.sync({force: true})
