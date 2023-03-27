@@ -6,14 +6,8 @@ async function getUserById(id) {
     where: {
       id: id,
     },
-  });
-  if (user !== null) {
-    return user;
-  } else {
-    const error = new APIerror(`User with id ${id} doesn't exist.`);
-    error.httpStatus = 404;
-    throw error;
-  }
+  })
+  return user;
 }
 
 module.exports = getUserById;
