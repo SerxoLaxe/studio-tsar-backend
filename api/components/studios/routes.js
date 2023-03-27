@@ -1,20 +1,20 @@
 const express = require("express");
-const studios = require("./handlers");
+const controllers = require("./controllers");
 
 const id_router = express
   .Router({ mergeParams: true })
-  .put("/", studios.edit)
-  .delete("/", studios.remove)
-  .get('/', studios.getById)
+  .put("/", controllers.edit)
+  .delete("/", controllers.remove)
+  .get('/', controllers.getById)
   .use("/projects", require("./components/projects/routes"))
   .use("/clients", require("./components/clients/routes"))
   .use("/artists", require("./components/artists/routes"))
   .use("/events", require("./components/events/routes"));
 
-const studios_router = express
+const studiosRouter = express
   .Router({ mergeParams: true })
-  .post("/", studios.create)
-  .get("/search", studios.search)
+  .post("/", controllers.create)
+  .get("/search", controllers.search)
   .use("/:studioId", id_router);
 
-module.exports = studios_router;
+module.exports = studiosRouter;

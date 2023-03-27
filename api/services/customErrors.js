@@ -5,4 +5,4 @@ class APIerror extends Error {
     }
 }
 
-module.exports = APIerror
+module.exports = {APIerror}
