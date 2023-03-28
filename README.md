@@ -7,9 +7,12 @@
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 
 
-CRUD REST API for a tattoo studio CRM app written in Javascript, using Express as server framework and Mysql as database, interfacing with it using Sequelize.
+CRUD REST API for a tattoo studio CRM app written in Javascript using Express as server framework, Mysql as database server and Sequelize as ORM.
+The app uses Passport as authentication middleware, applying a combination of local and remote strategies that ultimately rely on JWT authentication.
+
 The project structure follows this modular approach:
 
 
