@@ -13,7 +13,7 @@
 CRUD REST API for a tattoo studio CRM app written in Javascript using Express as server framework, Mysql as database server and Sequelize as ORM.
 The app uses Passport as authentication middleware, applying a combination of local and remote strategies that ultimately rely on JWT authentication.
 
-The project structure follows this modular approach:
+The project structure follows this modular approach instead of the traditional MVC approach ([inspired by this](https://www.codemzy.com/blog/nodejs-file-folder-structure)):
 
 
     .
