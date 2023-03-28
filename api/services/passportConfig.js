@@ -1,8 +1,8 @@
 const userGoogleStrategy = require("../components/users/components/auth/google/passportStrategy");
-const passport = require('passport')
+const passport = require("passport");
 
 function passportConfig() {
-  passport.use( 'user_google', userGoogleStrategy);
+  passport.use("user_google", userGoogleStrategy);
 }
 
-module.exports = {passportConfig, passport};
+module.exports = { passportConfig, passport };
