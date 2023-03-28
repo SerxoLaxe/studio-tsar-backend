@@ -1,33 +1,46 @@
 const Router = require("express").Router;
 const { validate } = require("express-validation");
-const ctrl = require("./controllers");
-const validations = require("./validations");
-const md = require("./middlewares");
+
+//Controllers
+const {
+  edit,
+  register,
+  remove,
+  verify,
+  search,
+  getById,
+} = require("./controllers");
+
+//Components
+const {auth} = require('./components')
+
+//middlewares
+const {
+  userExists,
+  isUserDeleted,
+  isUserInactive,
+  isUserVerified,
+} = require("./middlewares");
+
+//validations
+const { idSchema } = require("./validations");
 
 const idRouter = Router({ mergeParams: true })
-  .put(
-    "/",
-    validate(ctrl.edit.validation),
-    md.isUserVerified,
-    ctrl.edit.handler
-  )
-  .put(
-    "/verify/:verificationCode",
-    validate(ctrl.verify.validation),
-    ctrl.verify.handler
-  )
-  .delete("/", ctrl.remove.handler)
-  .get("/", ctrl.getById.handler);
+  .put("/", validate(edit.validation), isUserVerified, edit.handler)
+  .put("/verify/:verificationCode", validate(verify.validation), verify.handler)
+  .delete("/", remove.handler)
+  .get("/", getById.handler);
 
 const usersRouter = Router({ mergeParams: true })
-  .post("/", validate(ctrl.register.validation), ctrl.register.handler)
-  .get("/search", validate(ctrl.search.validation), ctrl.search.handler)
+  .post("/", validate(register.validation), register.handler)
+  .get("/search", validate(search.validation), search.handler)
+  .use('/auth', auth.routes)
   .use(
     "/:userId",
-    validate(validations.idSchema),
-    md.userExists,
-    md.isUserDeleted,
-    md.isUserInactive,
+    validate(idSchema),
+    userExists,
+    isUserDeleted,
+    isUserInactive,
     idRouter
   );
 

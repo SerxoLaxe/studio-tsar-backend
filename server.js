@@ -36,6 +36,9 @@ db.sequelize.sync({ force: true });
 // Import cors module
 const cors = require("cors");
 
+//Configure passport
+require("./api/services/passportConfig").passportConfig();
+
 /////////////////////////////////////*MIDDLEWARES*///////////////////////////////////////
 
 // Middleware for logging events.

@@ -42,6 +42,10 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING(20),
         allowNull: true,
       },
+      google_id: {
+        type: DataTypes.STRING(50),
+        allowNull: true
+      }
     },
     {
       sequelize,

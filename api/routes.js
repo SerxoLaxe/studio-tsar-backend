@@ -1,9 +1,10 @@
 const Router = require("express").Router;
+const {clients, users, studios} = require('./components')
 
 const api_router = Router({ mergeParams: true })
-  .use("/clients", require("./components/clients/routes"))
-  .use("/users", require("./components/users/routes"))
-  .use("/studios", require("./components/studios/routes"));
+  .use("/clients", clients.routes)
+  .use("/users", users.routes)
+  .use("/studios", studios.routes);
 
 const main_router = Router({ mergeParams: true }).use("/api", api_router);
 
