@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const passport = require("../../../../../services/passportConfig").passport;
 
-const googleRouter = Router({ mergeParams: true })
+const googleRouter = Router()
   .get("/", passport.authenticate("google", { scope: ["email", "profile"] }))
   .get(
     "/callback",
