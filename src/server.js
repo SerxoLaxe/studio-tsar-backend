@@ -7,6 +7,9 @@ const { HOST, PORT, UPLOAD_DIRECTORY } = process.env;
 // format and manage file paths with module Path.
 const path = require("path");
 
+//Module alias to access all modules of the application easily, instead of long relative paths as '../../../../module.js'
+//require("module-alias/register");
+
 // Middleware for express event logging.
 const morgan = require("morgan");
 
@@ -35,9 +38,6 @@ db.sequelize.sync({ force: true });
 
 // Import cors module
 const cors = require("cors");
-
-//Configure passport
-require("./api/services/passportConfig").passportConfig();
 
 /////////////////////////////////////*MIDDLEWARES*///////////////////////////////////////
 

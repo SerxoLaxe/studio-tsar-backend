@@ -1,5 +1,5 @@
-const users = require("../../../models").users;
-const APIerror = require("../../services").customErrors.APIerror;
+const users = require("#models").users;
+const {APIerror }= require("#api").services.customErrors;
 
 async function userExists(req, res, next) {
   try {
@@ -31,6 +31,7 @@ async function isUserDeleted(req, res, next) {
     });
     if (user.account_state == "deleted") {
       const error = new APIerror(`User account is deleted.`);
+      error.httpStatus = 404;
       throw error;
     } else {
       next();
@@ -49,6 +50,7 @@ async function isUserInactive(req, res, next) {
     });
     if (user.account_state == "inactive") {
       const error = new APIerror(`User account is inactive.`);
+      error.httpStatus = 404;
       throw error;
     } else {
       next();
@@ -67,6 +69,7 @@ async function isUserVerified(req, res, next) {
     });
     if (user.verification_code !== null) {
       const error = new APIerror(`User account is not verified.`);
+      error.httpStatus = 404;
       throw error;
     } else {
       next();

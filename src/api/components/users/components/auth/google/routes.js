@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const passport = require("../../../../../services/passportConfig").passport;
+const passport = require("passport")
 
 const googleRouter = Router()
   .get("/", passport.authenticate("user_google", { scope: ["email", "profile"] }))

@@ -1,5 +1,5 @@
-const { APIerror } = require("../../../../services/customErrors");
-const usersModel = require("../../../../../models").users;
+const { APIerror } = require("#api").services.customErrors
+const usersModel = require("#models").users;
 
 async function verifyUser(id, verificationCode) {
 

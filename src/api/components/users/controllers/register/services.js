@@ -1,4 +1,4 @@
-const usersModel = require("../../../../../models").users;
+const usersModel = require("#models").users;
 const { APIerror } = require("../../../../services/customErrors");
 const crypto = require('crypto')
 
