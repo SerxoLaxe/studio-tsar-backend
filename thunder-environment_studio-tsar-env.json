@@ -1,0 +1,48 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "studio-tsar-env",
+    "dateExported": "2023-03-23T00:51:59.472Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "clientId",
+            "value": "1"
+        },
+        {
+            "name": "userId",
+            "value": "1"
+        },
+        {
+            "name": "studioId",
+            "value": "1"
+        },
+        {
+            "name": "projectId",
+            "value": "1"
+        },
+        {
+            "name": "studioClientId",
+            "value": "1"
+        },
+        {
+            "name": "studioArtistId",
+            "value": "1"
+        },
+        {
+            "name": "eventId",
+            "value": "1"
+        },
+        {
+            "name": "appointmentId",
+            "value": "1"
+        },
+        {
+            "name": "billId",
+            "value": "1"
+        },
+        {
+            "name": "documentId",
+            "value": "1"
+        }
+    ]
+}
