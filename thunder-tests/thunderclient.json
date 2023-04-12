@@ -600,5 +600,47 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "9d6508b6-668f-4921-8495-af223e233e51",
+    "colId": "b9e9f463-d867-435d-94b9-59ed97e70c9e",
+    "containerId": "86062a1f-5de6-4d3a-b1a1-f79fc93ef566",
+    "name": "google",
+    "url": "/users/auth/google",
+    "method": "GET",
+    "sortNum": 260000,
+    "created": "2023-04-12T14:52:50.719Z",
+    "modified": "2023-04-12T14:53:17.318Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "0bfdf7e3-eace-4e8f-923e-08536123c955",
+    "colId": "b9e9f463-d867-435d-94b9-59ed97e70c9e",
+    "containerId": "86062a1f-5de6-4d3a-b1a1-f79fc93ef566",
+    "name": "local",
+    "url": "/users/auth/local",
+    "method": "POST",
+    "sortNum": 270000,
+    "created": "2023-04-12T14:54:15.492Z",
+    "modified": "2023-04-12T15:06:47.682Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "email",
+          "value": ""
+        },
+        {
+          "name": "password",
+          "value": ""
+        }
+      ]
+    },
+    "tests": []
   }
 ]
